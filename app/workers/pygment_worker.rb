@@ -1,7 +1,8 @@
 class PygmentWorker 
+
 	include Sidekiq::Worker
 	
-	def perfom
-
+	def perform
+		puts "Doing hard work"
 	end
 end
