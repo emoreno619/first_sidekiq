@@ -1,7 +1,8 @@
 class SnippetController < ApplicationController
 	def show
-	  aWorker = PygmentWorker.new
-	  aWorker.perform
+	  @snippets = Snippet.all
+	  # aWorker = PygmentWorker.new
+	  # aWorker.perform
 	end
 
 	def new
@@ -9,6 +10,12 @@ class SnippetController < ApplicationController
 	end
 
 	def create
+		@snippet = Snippet.new(params.require(:snippet).permit(:body))
+		
+		if @snippet.save
+			aWorker = PygmentWorker.new
+			aWorker.perform(@snippet.id)
+		end
 	  redirect_to show_path
 	end
 end

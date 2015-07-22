@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722214302) do
+ActiveRecord::Schema.define(version: 20150722222002) do
 
   create_table "snippets", force: :cascade do |t|
     t.string   "body"
