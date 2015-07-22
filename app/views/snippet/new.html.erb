@@ -1,0 +1,12 @@
+<%= form_for( @snippet) do |f| %>
+	
+	
+		<%= f.label :body, class:"col-md-2"  %>
+	
+			<%= f.text_field :body, class:"form-control", autofocus: true %>
+		
+	<div class="actions col-sm-offset-2">
+		<%= f.submit class:"btn btn-primary" %>
+	</div>
+
+<% end %>

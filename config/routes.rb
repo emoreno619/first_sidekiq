@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'show', to: 'snippet#show'
+  get 'new', to: 'snippet#new', as: 'snippets'
+  post 'new', to: 'snippet#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
